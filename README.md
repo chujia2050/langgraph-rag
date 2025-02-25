@@ -76,4 +76,4 @@ incorporates self-reflection and self-grading on both retrieved documents and
 generated responses. This approach aims to enhance the accuracy and relevance 
 of the information used and produced by the system.
 
-<img src="img/Self-RAG.png" alt="Diagram of Self-RAG" width="600"/>
+<img src="img/Self_RAG.png" alt="Diagram of Self-RAG" width="600"/>
