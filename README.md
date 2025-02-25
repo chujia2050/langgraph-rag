@@ -54,10 +54,7 @@ on the following aspects:
 
 By leveraging these strategies, Corrective-RAG aims to improve the quality of 
 RAG systems, making them more reliable and effective in generating accurate 
-and contextually relevant responses.
-
 <img src="img/CRAG.png" alt="Diagram of Corrective RAG" width="600"/>
-
 
 # Agentic RAG
 
@@ -77,3 +74,38 @@ generated responses. This approach aims to enhance the accuracy and relevance
 of the information used and produced by the system.
 
 <img src="img/Self_RAG.png" alt="Diagram of Self-RAG" width="600"/>
+
+# Adaptive RAG
+
+Adaptive RAG is an innovative strategy for Retrieval-Augmented Generation (RAG) that combines query analysis with active and self-corrective RAG techniques. This approach aims to optimize the retrieval and generation process by dynamically adapting to the nature of the query.
+
+## Overview
+
+In the foundational paper, Adaptive RAG is described as a method that routes queries through different retrieval strategies based on query analysis. The strategies include:
+
+1. **No Retrieval**: For queries that can be answered without additional information.
+2. **Single-shot RAG**: For straightforward queries requiring minimal retrieval.
+3. **Iterative RAG**: For complex queries that benefit from multiple rounds of retrieval and refinement.
+
+## Implementation with LangGraph
+
+Building on these concepts, we will implement an Adaptive RAG system using LangGraph, focusing on the following routing strategies:
+
+- **Web Search**: Utilized for questions related to recent events or topics not covered in the existing index. This ensures access to the most current information.
+- **Self-corrective RAG**: Applied to questions related to our index, allowing for iterative refinement and self-correction to improve the accuracy and relevance of the generated responses.
+
+### Steps to Implement Adaptive RAG
+
+1. **Query Analysis**:
+   - Analyze the query to determine its nature and requirements.
+   - Decide the appropriate retrieval strategy based on the analysis.
+
+2. **Routing Logic**:
+   - Implement logic to route the query to either web search or self-corrective RAG based on the analysis.
+   - Ensure seamless integration and transition between different strategies.
+
+3. **Integration with LangGraph**:
+   - Use LangGraph to structure the workflow, manage state, and facilitate decision-making processes.
+   - Define nodes and edges to represent different retrieval strategies and transitions.
+
+<img src="img/Adaptive_RAG.png" alt="Diagram of Adaptive RAG" width="600"/>
