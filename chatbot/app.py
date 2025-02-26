@@ -9,7 +9,12 @@ if prompt:
         user_message = st.chat_message("human")
         user_message.write(prompt)
 
-        ai_message = st.chat_message("ai")
-        ai_reply = graph.invoke({"messages": [prompt]})
-        ai_message.write(ai_reply["messages"][-1].content)
+        with st.spinner("Generating response..."):
+                ai_message = st.chat_message("ai")
+                ai_reply = graph.invoke({"messages": [prompt]})
+                ai_message.write(ai_reply["messages"][-1].content)
 
+
+# Add a footer
+st.markdown("---")
+st.markdown("Powered by LangChain and Streamlit")

@@ -9,7 +9,6 @@ llm = ChatOpenAI(model="gpt-4o", temperature=0)
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
 
-
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.vectorstores import Chroma
@@ -206,8 +205,6 @@ def decide_to_generate(state) -> Literal["generate", "rewrite"]:
         print("---DECISION: DOCS NOT RELEVANT---")
         return "rewrite"
 
-
-from IPython.display import Image, display
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
 
@@ -245,9 +242,6 @@ workflow.add_edge("generate", END)
 
 # Compile
 graph = workflow.compile()
-
-# View
-display(Image(graph.get_graph().draw_mermaid_png()))
 
 
 
