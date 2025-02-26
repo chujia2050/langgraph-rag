@@ -13,4 +13,3 @@ langgraph-cli
 chromadb
 langchainhub
 tiktoken
-pysqlite3
